@@ -23,6 +23,7 @@ Param (
 )
 
 Process {
+    
     if ($MyInvocation.ScriptName -notlike '*Invoke-Build.ps1') {
         Invoke-Build $Tasks $MyInvocation.MyCommand.Path @PSBoundParameters
         return
@@ -47,6 +48,7 @@ Process {
             QualityTestsStopOnFail
 
     task testAll UnitTests, IntegrationTests, QualityTestsStopOnFail
+    
 }
 
 
